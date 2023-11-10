@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+#include "parser_library.h"
 
-string Parser(string& source, const char DELIMITER);
+using namespace std;
 
 int main()
 {
@@ -20,16 +20,8 @@ int main()
 
     cout << "name: " << "\t\t" << name << endl;
     cout << "date of birth: " << "\t\t" << date_of_birth << endl;
-    cout << "phone: " << phone << "\t\t" << endl;
+    cout << "phone: " << "\t\t" << phone << endl;
 
     return 0;
 }
 
-string Parser(string& source, const char DELIMITER)
-{
-    auto position = source.find(DELIMITER);
-    auto result = source.substr(0, position);
-    source = source.substr(position + 1);
-
-    return result;
-}
